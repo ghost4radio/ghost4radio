@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/703649334612328578/925054462530293780/unnamed.jpg">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Ghost4Rádió</title>
+ 
+</head>
+<body>
+    <h1> Ghost4Rádió</h1>
+    <img src="https://cdn.discordapp.com/attachments/703649334612328578/925054462530293780/unnamed.jpg" id="icon" alt="icon">
+    <audio autoplay id="play" onloadeddata="lower()">
+        <source src="19.mp3" type="audio/mpeg">
+    </audio>
+
+    <input type="range" min="1" max="25" value="12.5" class="slider" id="myRange" onchange="setVol()">
+    
+    <table>
+        <tr>  
+            <td>
+                <img src="https://cdn.discordapp.com/attachments/703649334612328578/952612972293914704/html3.png" id="pic1">
+            </td>
+            <td>
+                <img src="https://cdn.discordapp.com/attachments/703649334612328578/952612973137002577/html5.png" id="pic2">
+            </td>
+        </tr>  
+    </table>
+
+    <script src="script.js"> </script>
+</body>
+</html>
