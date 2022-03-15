@@ -2,7 +2,7 @@ window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközel
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 
-let files = 130;
+let files = 131;
 let vol = v.value / 100;
 let last = -1;
 let rng;
