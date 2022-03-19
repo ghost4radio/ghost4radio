@@ -2,12 +2,12 @@ window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközel
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 
-let files = 131;
+let files = 171;
 let vol = v.value / 100;
 let last = -1;
 let rng;
 
-let pics = ["https://cdn.discordapp.com/attachments/703649334612328578/952614422688464896/kriszhadvice3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880698799325214/cumighost.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612971689943040/html1.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972038074408/html2.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972293914704/html3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972604317766/html4.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973137002577/html5.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973380268102/html6.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880699092906014/html7.png"];
+let pics = ["https://cdn.discordapp.com/attachments/703649334612328578/952614422688464896/kriszhadvice3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880698799325214/cumighost.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612971689943040/html1.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972038074408/html2.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972293914704/html3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972604317766/html4.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973137002577/html5.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973380268102/html6.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880699092906014/html7.png", "https://cdn.discordapp.com/attachments/703649334612328578/954666506648715304/html8.gif"];
 
 let r1 = Math.floor(Math.random() * pics.length);
 let r2 = Math.floor(Math.random() * pics.length);
@@ -21,6 +21,16 @@ setInterval(() => {
     document.getElementById("pic2").src = pics[r2];
 }, 50000);
 
+var zene = new BuildArray(files)
+document.writeln("<script type='text/javascript' src='g4r_track.js'></script>");
+function BuildArray(size) {
+    this.length = size
+    for (var i = 1; i <= size; i++) {
+        this[i] = null
+    }
+    return this
+}
+
 audio.onended = function() {  
    do {
        rng = Math.floor(Math.random() * files) + 1;
@@ -31,6 +41,12 @@ audio.onended = function() {
    audio.volume = vol;
 
    last = rng;
+
+   if(zene[rng] !== null && zene[rng].length > 1) {
+    document.getElementById("aktualis").innerHTML = `<span>${zene[rng]}<span>`
+   } else {
+    document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
+   }
 }
 
 function setVol() {
