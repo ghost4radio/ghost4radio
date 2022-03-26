@@ -47,7 +47,13 @@ body {
         width: 250px;
         border-radius: 125px;
         user-select: none;
-        animation: spin 5s infinite linear;
+        animation: spin 5s infinite linear;  
+        -webkit-user-drag: none;
+        user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
     }
 }
 @media screen and (max-width: 959px) {
