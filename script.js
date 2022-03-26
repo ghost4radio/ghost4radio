@@ -2,7 +2,7 @@ window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközel
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 
-let files = 171;
+let files = 206;
 let vol = v.value / 100;
 let last = -1;
 let rng;
@@ -44,8 +44,12 @@ audio.onended = function() {
 
    if(zene[rng] !== null && zene[rng].length > 1) {
     document.getElementById("aktualis").innerHTML = `<span>${zene[rng]}<span>`
+    document.getElementById("icon").style.filter = "grayscale(0)";
+    document.getElementById("icon").style.cursor = "pointer";
    } else {
     document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
+    document.getElementById("icon").style.filter = "grayscale(1)";
+    document.getElementById("icon").style.cursor = "unset";
    }
 }
 
@@ -55,4 +59,15 @@ function setVol() {
 
 function lower() {
    audio.volume = v.value / 100;
+}
+
+function skip() {
+    if(!zene[rng]) return;   
+    if(zene[rng] !== null && zene[rng].length > 1) {
+        audio.onended();
+    } else {
+     document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
+     document.getElementById("icon").style.filter = "grayscale(1)";
+     document.getElementById("icon").style.cursor = "unset";
+    }
 }
