@@ -66,7 +66,10 @@ function lower() {
 }
 
 function skip() {
-    window.open('https://www.youtube.com/watch?v=zOQfabYBtM0');
+    let rando = Math.floor(Math.random() * 200) + 1;
+    if(rando == 10) {
+         window.open('https://www.youtube.com/watch?v=zOQfabYBtM0');
+    }
     if(!zene[rng]) return;   
     if(zene[rng] !== null && zene[rng].length > 1) {
         audio.onended();
