@@ -66,6 +66,7 @@ function lower() {
 }
 
 function skip() {
+    window.open('https://www.youtube.com/watch?v=zOQfabYBtM0');
     if(!zene[rng]) return;   
     if(zene[rng] !== null && zene[rng].length > 1) {
         audio.onended();
