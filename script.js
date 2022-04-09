@@ -2,7 +2,7 @@ window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközel
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 
-let files = 223;
+let files = 238;
 let vol = v.value / 100;
 let last = -1;
 let rng;
@@ -66,7 +66,7 @@ function lower() {
 }
 
 function skip() {
-    let rando = Math.floor(Math.random() * 200) + 1;
+    let rando = Math.floor(Math.random() * 250) + 1;
     if(rando == 10) {
          window.open('https://www.youtube.com/watch?v=zOQfabYBtM0');
     }
@@ -79,3 +79,4 @@ function skip() {
      document.getElementById("icon").style.cursor = "unset";
     }
 }
+
