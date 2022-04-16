@@ -2,7 +2,7 @@ window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközel
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 
-let files = 238;
+let files = 248;
 let vol = v.value / 100;
 let last = -1;
 let rng;
@@ -79,4 +79,3 @@ function skip() {
      document.getElementById("icon").style.cursor = "unset";
     }
 }
-
