@@ -37,6 +37,11 @@
     <p id="mostszol">🟢Most szól: <span id="aktualis"> Műsorszünet </span></p>
 
     <input type="range" min="1" max="25" value="12.5" class="slider" id="myRange" onchange="setVol()" onclick="setVol()">
+
+    <div id="control">
+        <img src="pause.png" class="controls" id="c1" onclick="isPaused()">
+        <img src="volume.png" class="controls" id="c2" onclick="isMuted()">
+    </div>
     
     <table id="lenti">
         <tr>  
@@ -53,4 +58,3 @@
     <script src="g4r_track.js"></script>
 </body>
 </html>
-
