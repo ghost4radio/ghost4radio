@@ -1,12 +1,16 @@
 window.onbeforeunload = function () {return "Biztos kilépsz? Az oldal legközelebbi betöltésénél a lejátszó ugorhat.";}
 var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
+var playButton = document.getElementById("c1");
+var muteButton = document.getElementById("c2");
 
-let files = 248;
+let files = 273;
 let vol = v.value / 100;
 let last = -1;
 let rng;
 let played = [];
+let paused = false;
+
 
 let pics = ["https://cdn.discordapp.com/attachments/703649334612328578/952614422688464896/kriszhadvice3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880698799325214/cumighost.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612971689943040/html1.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972038074408/html2.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972293914704/html3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972604317766/html4.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973137002577/html5.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973380268102/html6.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880699092906014/html7.png", "https://cdn.discordapp.com/attachments/703649334612328578/954666506648715304/html8.gif"];
 
@@ -77,5 +81,27 @@ function skip() {
      document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
      document.getElementById("icon").style.filter = "grayscale(1)";
      document.getElementById("icon").style.cursor = "unset";
+    }
+}
+
+function isPaused() {
+    if(paused) {
+        audio.play();
+         playButton.src = "pause.png";
+         paused = false;
+        }  else {
+            audio.pause();
+            playButton.src = "play.png";
+            paused = true;
+        }
+}
+
+function isMuted() {
+    if(audio.volume == 0) {
+        audio.volume = vol;
+        muteButton.src = "volume.png";
+    } else {
+        audio.volume = 0;
+        muteButton.src = "mute.png"
     }
 }
