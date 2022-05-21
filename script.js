@@ -98,7 +98,7 @@ function isPaused() {
 
 function isMuted() {
     if(audio.volume == 0) {
-        audio.volume = vol;
+        audio.volume = v.value / 100;
         muteButton.src = "volume.png";
     } else {
         audio.volume = 0;
