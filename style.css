@@ -55,6 +55,13 @@ body {
         -webkit-user-select: none;
         -ms-user-select: none;
     }
+    #control {
+        padding-top: 50px;
+    }
+    #control img {
+        width: 50px;
+        margin: 0px 25px;
+    }
 }
 @media screen and (max-width: 959px) {
     #pic1 {
@@ -87,6 +94,13 @@ body {
         user-select: none;
         animation: spin 5s infinite linear;
     }
+    #control {
+        padding-top: 50px;
+    }
+    #control img {
+        width: 50px;
+        margin: 0px 25px;
+    }
 }
 @media screen and (max-width: 500px) {
     #pic1 {
@@ -118,6 +132,13 @@ body {
         border-radius: 125px;
         user-select: none;
         animation: spin 5s infinite linear;
+    }
+    #control {
+        padding-top: 50px;
+    }
+    #control img {
+        width: 35px;
+        margin: 0px 25px;
     }
 }
 
@@ -175,6 +196,15 @@ div {
     cursor: pointer;
 }
 
+.controls {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity .2s;
+}
+
+.controls:hover {
+    opacity: 1;
+}
 
 @keyframes floating {
     0% {
