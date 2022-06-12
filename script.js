@@ -4,7 +4,7 @@ var v = document.getElementById("myRange");
 var playButton = document.getElementById("c1");
 var muteButton = document.getElementById("c2");
 
-let files = 273;
+let files = 293;
 let vol = v.value / 100;
 let last = -1;
 let rng;
