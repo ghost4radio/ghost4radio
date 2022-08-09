@@ -70,9 +70,9 @@ function lower() {
 }
 
 function skip() {
-    let rando = Math.floor(Math.random() * 250) + 1;
-    if(rando == 10) {
-         window.open('https://www.youtube.com/watch?v=zOQfabYBtM0');
+    let rando = Math.floor(Math.random() * 2) + 1;
+    if(rando == 1) {
+         window.open('https://cdn.discordapp.com/attachments/703649061139382403/1006618477383139328/jonacapa.png');
     }
     if(!zene[rng]) return;   
     if(zene[rng] !== null && zene[rng].length > 1) {
