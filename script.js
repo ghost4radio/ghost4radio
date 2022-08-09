@@ -70,7 +70,7 @@ function lower() {
 }
 
 function skip() {
-    let rando = Math.floor(Math.random() * 2) + 1;
+    let rando = Math.floor(Math.random() * 200) + 1;
     if(rando == 1) {
          window.open('https://cdn.discordapp.com/attachments/703649061139382403/1006618477383139328/jonacapa.png');
     }
