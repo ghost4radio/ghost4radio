@@ -1,32 +1,45 @@
 body {
-    background-color: #2C2F33;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #0d1626;
+    
+  }  :after, :before {
+        content: "";
+        position:fixed;
+        z-index: -2;
+        top: 0;
+        width: 100vw;  
+        height: 100vh; 
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(0,0,0,0.05);
+        animation: bg 90s linear infinite;
+        pointer-events: none;
+
+    }
+
+    :after {
+        left: 15vw;
+    }
+
+    :before {
+        pointer-events: none;
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    
+    }
+
+#start {
+    animation: disappear 35s ease-in-out forwards; 
+    -moz-animation: disappear 35s ease-in-out forwards;
+    -webkit-animation: disappear 35s ease-in-out forwards;
 }
 
+
+
 @media screen and (min-width: 959px) {
-    #lenti {
-        width: 100%;
-        margin-top: -115px;
-    }
-    #pic1 {
-        margin-left: auto;
-        margin-right: auto;
-        pointer-events: none;
-        width: 550px;
-        height: 550px;
-        float: left;
-        animation: fading 50s ease-in-out infinite;
-        position: relative;
-    }
-    #pic2 {
-        margin-left: auto;
-        margin-right: auto;
-        pointer-events: none;
-        width: 550px;
-        height: 550px;
-        float: right;
-        animation: fading 50s ease-in-out infinite;
-        position: relative;
-    }
+
     #myRange {
         display: block;
         margin: auto;
@@ -64,12 +77,7 @@ body {
     }
 }
 @media screen and (max-width: 959px) {
-    #pic1 {
-        display: none;
-    }
-    #pic2 {
-        display: none;
-    }
+  
     #myRange {
         width: 250px;
         height: 20px;
@@ -103,12 +111,10 @@ body {
     }
 }
 @media screen and (max-width: 500px) {
-    #pic1 {
-        display: none;
-    }
-    #pic2 {
-        display: none;
-    }
+ 
+    #start {
+        visibility: hidden;
+    } 
     #myRange {
         width: 200px;
         height: 15px;
@@ -240,5 +246,45 @@ div {
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        
+        opacity: 0;
+    }
+}
+
+@keyframes bg {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes theme {
+    0% {
+        background: #0d1626;
+    }
+    
+    50% {
+        background: #ff9819;
+    }
+
+    100% {
+        background: #0d1626;
     }
 }
