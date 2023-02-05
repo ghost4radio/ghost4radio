@@ -3,8 +3,13 @@ var audio = document.getElementById("play");
 var v = document.getElementById("myRange");
 var playButton = document.getElementById("c1");
 var muteButton = document.getElementById("c2");
+var video = document.getElementById("start");
+var mainContent = document.getElementById("main");
+const animation = document.querySelector('#start');
 
-let files = 293;
+console.log("BQS?8F#ks-G%l#=H=:l@@;Tq!@<4&6Bln$2@P2A50)");
+
+let files = 343;
 let vol = v.value / 100;
 let last = -1;
 let rng;
@@ -12,21 +17,7 @@ let played = [];
 let paused = false;
 
 
-let pics = ["https://cdn.discordapp.com/attachments/703649334612328578/952614422688464896/kriszhadvice3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880698799325214/cumighost.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612971689943040/html1.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972038074408/html2.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972293914704/html3.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612972604317766/html4.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973137002577/html5.png", "https://cdn.discordapp.com/attachments/703649334612328578/952612973380268102/html6.png", "https://cdn.discordapp.com/attachments/703649334612328578/952880699092906014/html7.png", "https://cdn.discordapp.com/attachments/703649334612328578/954666506648715304/html8.gif"];
-
-let r1 = Math.floor(Math.random() * pics.length);
-let r2 = Math.floor(Math.random() * pics.length);
-document.getElementById("pic1").src = pics[r1];
-document.getElementById("pic2").src = pics[r2];
-
-setInterval(() => {
-    r1 = Math.floor(Math.random() * pics.length);
-    r2 = Math.floor(Math.random() * pics.length);
-    document.getElementById("pic1").src = pics[r1];
-    document.getElementById("pic2").src = pics[r2];
-}, 50000);
-
-var zene = new BuildArray(files)
+var zene = new BuildArray(files);
 document.writeln("<script type='text/javascript' src='g4r_track.js'></script>");
 function BuildArray(size) {
     this.length = size
@@ -35,6 +26,14 @@ function BuildArray(size) {
     }
     return this
 }
+
+animation.addEventListener("animationend", () => {
+    mainContent.style.zIndex = 100;
+    video.style.zIndex = -1;
+    video.remove();
+});
+
+
 
 audio.onended = function() {  
    do {
@@ -45,7 +44,7 @@ audio.onended = function() {
   } while(rng == last || played.includes(rng));
 
    audio.volume = vol;
-   audio.setAttribute("src", `${rng}.mp3`);
+   audio.setAttribute("src", `./zenek/${rng}.mp3`);
    audio.volume = vol;
    played.push(rng);
    last = rng;
@@ -54,11 +53,15 @@ audio.onended = function() {
     document.getElementById("aktualis").innerHTML = `<span>${zene[rng]}<span>`
     document.getElementById("icon").style.filter = "grayscale(0)";
     document.getElementById("icon").style.cursor = "pointer";
+   } else if (played.length == 1) {
+        document.getElementById("icon").style.filter = "grayscale(0)";
+        document.getElementById("icon").style.cursor = "pointer";
    } else {
-    document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
-    document.getElementById("icon").style.filter = "grayscale(1)";
-    document.getElementById("icon").style.cursor = "unset";
+        document.getElementById("aktualis").innerHTML = `<span> Műsorszünet <span>`
+        document.getElementById("icon").style.filter = "grayscale(1)";
+        document.getElementById("icon").style.cursor = "unset";
    }
+   muteButton.src = "volume.png";
 }
 
 function setVol() {
@@ -70,10 +73,6 @@ function lower() {
 }
 
 function skip() {
-    let rando = Math.floor(Math.random() * 200) + 1;
-    if(rando == 1) {
-         window.open('https://cdn.discordapp.com/attachments/703649061139382403/1006618477383139328/jonacapa.png');
-    }
     if(!zene[rng]) return;   
     if(zene[rng] !== null && zene[rng].length > 1) {
         audio.onended();
@@ -82,6 +81,7 @@ function skip() {
      document.getElementById("icon").style.filter = "grayscale(1)";
      document.getElementById("icon").style.cursor = "unset";
     }
+    muteButton.src = "volume.png";
 }
 
 function isPaused() {
@@ -105,3 +105,8 @@ function isMuted() {
         muteButton.src = "mute.png"
     }
 }
+
+
+(() => {
+    audio.onended();
+})();
