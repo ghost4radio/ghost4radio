@@ -7,7 +7,7 @@ var video = document.getElementById("start");
 var mainContent = document.getElementById("main");
 const animation = document.querySelector('#start');
 
-console.log("BQS?8F#ks-G%l#=H=:l@@;Tq!@<4&6Bln$2@P2A50)");
+console.log("https://visszaszamolas.github.io/");
 
 let files = 343;
 let vol = v.value / 100;
