@@ -9,7 +9,7 @@ const animation = document.querySelector('#start');
 
 console.log("https://visszaszamolas.github.io/");
 
-let files = 343;
+let files = 369;
 let vol = v.value / 100;
 let last = -1;
 let rng;
