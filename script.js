@@ -110,3 +110,7 @@ function isMuted() {
 (() => {
     audio.onended();
 })();
+
+function getV(response) {
+    console.log("Látogatók száma összesen: " + response.value);
+}
