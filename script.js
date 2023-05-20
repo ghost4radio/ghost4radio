@@ -7,7 +7,7 @@ var video = document.getElementById("start");
 var mainContent = document.getElementById("main");
 const animation = document.querySelector('#start');
 
-let files = 369;
+let files = 390;
 let vol = v.value / 100;
 let last = -1;
 let rng;
@@ -109,6 +109,6 @@ function isMuted() {
     audio.onended();
 })();
 
-function getV(response) {
+/*function getV(response) {
     console.log("Látogatók száma összesen: " + response.value);
-}
+}*/
