@@ -36,6 +36,30 @@ body {
     -webkit-animation: disappear 35s ease-in-out forwards;
 }
 
+#maindiv {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 100%;
+    background-color: rgb(8, 8, 18);
+    width: 50vw;
+    height: 75vh;
+    text-align: center;  
+    border: 10px solid rgb(250, 0, 255);
+    border-radius: 25px;
+    position:relative;
+    z-index: 999;
+}
+
+button {
+    background-color: rgb(255, 255, 255); 
+    color: black; 
+    padding: 16px 32px;
+    font-family: "DM Sans";
+    font-size: 15px;
+    cursor: pointer;
+}
+
 
 
 @media screen and (min-width: 959px) {
@@ -44,6 +68,12 @@ body {
         display: block;
         margin: auto;
         margin-top: 75px;
+    }
+    p {
+        color: #FFFFFF;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 50px;
     }
     h1 {
         color: #FFFFFF;
@@ -85,6 +115,13 @@ body {
         margin: auto;
         margin-top: 75px;
     }
+
+    p {
+        color: #FFFFFF;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 50px;
+    } 
     h1 {
         color: #FFFFFF;
         text-align: center;
@@ -115,6 +152,7 @@ body {
     #start {
         visibility: hidden;
     } 
+
     #myRange {
         width: 200px;
         height: 15px;
@@ -122,6 +160,12 @@ body {
         margin: auto;
         margin-top: 75px;
     }
+    p {
+        color: #FFFFFF;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 10px;
+    } 
     h1 {
         color: #FFFFFF;
         text-align: center;
