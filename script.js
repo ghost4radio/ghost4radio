@@ -7,7 +7,8 @@ var video = document.getElementById("start");
 var mainContent = document.getElementById("main");
 const animation = document.querySelector('#start');
 
-let files = 390;
+
+let files = 416;
 let vol = v.value / 100;
 let last = -1;
 let rng;
