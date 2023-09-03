@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q152F5MEWV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Q152F5MEWV');
-    </script>
-
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q152F5MEWV"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-Q152F5MEWV');
+      </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn.discordapp.com/attachments/703649334612328578/925054462530293780/unnamed.jpg">
-    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="end.css">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
     <script> 
         document.addEventListener('click', musicPlay);
         function musicPlay() {
             document.getElementById('play').play();
             document.removeEventListener('click', musicPlay);
         }
-
     </script>
-    <title>Ghost4Rádió</title>
- 
+    <title> - </title>
 </head>
-<body>
-    <video src="start.mp4" id="start" width="100%" height="auto" autoplay muted style="z-index: 100; position: fixed; opacity: 1;"> </video>
-    <div id="main" style="z-index: -1;">
-        <h1> Ghost4Rádió</h1>
-        <img src="https://cdn.discordapp.com/attachments/703649334612328578/925054462530293780/unnamed.jpg" id="icon" alt="icon" onclick="skip()">
-
-        <audio autoplay id="play" onloadeddata="lower()">
-            <source src="" type="audio/mpeg">
-        </audio>
-
-        <p id="mostszol">🟢Most szól: <span id="aktualis"> Intro </span></p>
-
-        <input type="range" min="1" max="25" value="12.5" class="slider" id="myRange" onchange="setVol()" onclick="setVol()">
-
-        <div id="control">
-            <img src="pause.png" class="controls" id="c1" onclick="isPaused()">
-            <img src="volume.png" class="controls" id="c2" onclick="isMuted()">
-        </div>
-    </div>
-        <script src="script.js"> </script>
-        <script src="g4r_track.js"></script>
-        <script src="mach.js"></script>
+<body oncontextmenu="return false;">
+    <video src="end.mp4" id="start" width="100%" height="auto" autoplay muted loop style="position: fixed;"> </video>
+    <button id="exit"> KILÉPÉS </button>
+    <audio autoplay id="play">
+        <source src="end.mp3" type="audio/mpeg">
+    </audio>
+    <script src="end.js"> </script>
 </body>
 </html>
